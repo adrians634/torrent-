@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manas spēles</title>
+    <style>
+        body {
+            background: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 25px;
+        }
+
+        .game {
+            width: 320px;
+            margin: 30px auto;
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .download:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎮 Manas spēles</h1>
+    <p>Lejupielādē manas paša izveidotās spēles.</p>
+</header>
+
+<div class="game">
+    <h2>Mana spēle</h2>
+    <p>Šeit pievieno savas spēles aprakstu.</p>
+
+    <a class="download" href="mana_spele.torrent">
+        Lejupielādēt Torrent
+    </a>
+</div>
+
+</body>
+</html>
