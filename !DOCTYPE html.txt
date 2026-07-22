@@ -45,7 +45,7 @@
 
 <header>
     <h1>🎮 Manas spēles</h1>
-    <p>Lejupielādē manas paša izveidotās spēles.</p>
+    <p>Jūs varat lejoplādēt spēļu torrentus par brīvo.</p>
 </header>
 
 <div class="game">
