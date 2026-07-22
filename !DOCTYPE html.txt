@@ -44,7 +44,7 @@
 <body>
 
 <header>
-    <h1>🎮 Manas spēles</h1>
+    <h1>🎮 torrent vault </h1>
     <p>Jūs varat lejoplādēt spēļu torrentus par brīvo.</p>
 </header>
 
@@ -52,7 +52,7 @@
     <h2>Mana spēle</h2>
     <p>Šeit pievieno savas spēles aprakstu.</p>
 
-    <a class="download" href="mana_spele.torrent">
+
         Lejupielādēt Torrent
     </a>
 </div>
