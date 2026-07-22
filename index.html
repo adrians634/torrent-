@@ -67,3 +67,36 @@ Tavs-projekts
 │
 ├── index.html
 └── [FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent
+<input type="text" id="search" placeholder="🔎 Meklēt spēli..." onkeyup="searchGames()">
+#search {
+    width: 300px;
+    padding: 12px;
+    margin: 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+<style>
+    body {
+        background: #121212;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+    }
+    <script>
+function searchGames() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let games = document.getElementsByClassName("game");
+
+    for (let i = 0; i < games.length; i++) {
+        let title = games[i].innerText.toLowerCase();
+
+        if (title.includes(input)) {
+            games[i].style.display = "";
+        } else {
+            games[i].style.display = "none";
+        }
+    }
+}
+</script>
