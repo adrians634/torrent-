@@ -49,10 +49,8 @@
 </header>
 
 <div class="game">
-    <h2>Mana spēle</h2>
+    <h2>torrent vault </h2>
     <p>Šeit pievieno savas spēles aprakstu.</p>
-
-
         Lejupielādēt Torrent
     </a>
 </div>
