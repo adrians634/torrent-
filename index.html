@@ -14,12 +14,12 @@ body {
     margin:0;
 }
 
-header{
+header {
     background:#1f1f1f;
     padding:30px;
 }
 
-#search{
+#search {
     width:300px;
     padding:12px;
     margin:20px;
@@ -27,7 +27,7 @@ header{
     border:none;
 }
 
-.game{
+.game {
     width:320px;
     margin:30px auto;
     background:#222;
@@ -35,7 +35,12 @@ header{
     border-radius:10px;
 }
 
-.download{
+.game img {
+    width:250px;
+    border-radius:10px;
+}
+
+.download {
     display:inline-block;
     margin-top:15px;
     padding:12px 25px;
@@ -47,6 +52,7 @@ header{
 </style>
 
 </head>
+
 <body>
 
 <header>
@@ -56,14 +62,27 @@ header{
 
 <input type="text" id="search" placeholder="🔎 Meklēt..." onkeyup="searchGames()">
 
-<div class="game">
-<h2>Mana spēle</h2>
-<p>Apraksts.</p>
 
-<a class="download" href="mana_spele.torrent" download>
-📥 Lejupielādēt
-</a>
+<div class="game">
+    <h2>Mana spēle</h2>
+    <p>Apraksts.</p>
+
+    <a class="download" href="" download>
+        📥 Lejupielādēt
+    </a>
 </div>
+
+
+<div class="game">
+    <img src="OIP.webp" alt="Attēls">
+
+    <h2>Mana filma vai spēle</h2>
+
+    <a class="download" href="[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent" download>
+        📥 Lejupielādēt
+    </a>
+</div>
+
 
 <script>
 function searchGames() {
@@ -72,28 +91,15 @@ function searchGames() {
 
     for (let i = 0; i < games.length; i++) {
         let title = games[i].innerText.toLowerCase();
-        games[i].style.display = title.includes(input) ? "" : "none";
+
+        if (title.includes(input)) {
+            games[i].style.display = "";
+        } else {
+            games[i].style.display = "none";
+        }
     }
 }
 </script>
 
 </body>
 </html>
-<div class="game">
-    <h2>Crash Bandicoot N. Sane Trilogy</h2>
-    <p>Spēles apraksts.</p>
-
-    <a class="download" href="Torrenti/[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent" download>
-    📥 Lejupielādēt
-</a>
-
-
-<div class="game">
-    <img src="OIP.webp(1)" alt="Kick-Ass (2010)">
-
-    <h2>Kick-Ass (2010)</h2>
-
-    <a class="download" href="Filmas/KICK-Ass.2010.BRRip.AVO.LV-FANORiP.mp4" download>
-        📥 Lejupielādēt filmu
-    </a>
-</div>
