@@ -3,101 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Torrent Vault</title>
+<title>torrent Vault</title>
 
 <style>
-body {
-    background:#121212;
-    color:white;
-    font-family:Arial,sans-serif;
-    text-align:center;
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background:#1f1f1f;
-    padding:30px;
+body{
+    background:linear-gradient(180deg,#111,#1d1d1d);
+    font-family:Arial,sans-serif;
+    color:white;
 }
 
-#search {
-    width:300px;
-    padding:12px;
-    margin:20px;
-    border-radius:8px;
-    border:none;
+header{
+    background:#191919;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.game {
+header h1{
+    font-size:40px;
+    color:#00d4ff;
+}
+
+header p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+#search{
+    display:block;
     width:320px;
     margin:30px auto;
-    background:#222;
-    padding:20px;
-    border-radius:10px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    outline:none;
 }
 
-.game img {
-    width:250px;
-    border-radius:10px;
+.games{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:20px 30px 50px;
 }
 
-.download {
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#28a745;
+.game{
+    width:320px;
+    background:#242424;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.game:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,212,255,.3);
+}
+
+.game img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.info{
+    padding:18px;
+}
+
+.info h2{
+    margin-bottom:10px;
+}
+
+.info p{
+    color:#bbb;
+    margin-bottom:18px;
+}
+
+.download{
+    display:block;
+    text-align:center;
+    background:#00a651;
     color:white;
     text-decoration:none;
-    border-radius:6px;
+    padding:12px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.download:hover{
+    background:#00c462;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<h1>🎮 Torrent Vault</h1>
-<p>Meklē spēles.</p>
+<h1>🎮 torrent Vault</h1>
+<p>Meklē savas iecienītākās spēles</p>
 </header>
 
-<input type="text" id="search" placeholder="🔎 Meklēt..." onkeyup="searchGames()">
-<div class="game">
-    <h2>Spēles nosaukums</h2>
-    <p>Spēles apraksts.</p>
-<div class="game">
-    <img src="web.2.avif" alt="Attēls">
+<input
+id="search"
+type="text"
+placeholder="🔎 Meklēt..."
+onkeyup="searchGames()">
 
-    <h2>Forza Motorsport</h2>
+<div class="games">
 
-    <a class="download" href="[FANO]Forza.Motorsport.7-CODEX.torrent" download>
-        📥 Lejupielādēt
-    </a>
+<div class="game">
+<img src="web.2.avif" alt="Forza Motorsport">
+<div class="info">
+<h2>Forza Motorsport</h2>
+<p>Sacīkšu spēle.</p>
+<a class="download" href="[FANO]Forza.Motorsport.7-CODEX.torrent">📥 Lejupielādēt</a>
+</div>
 </div>
 
-
 <div class="game">
-    <img src="OIP.webp" alt="Attēls">
-
-    <h2>Crash Bandicoot N sane Trilogy</h2>
-
-    <a class="download" href="[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent" download>
-        📥 Lejupielādēt
-    </a>
+<img src="OIP.webp" alt="Crash Bandicoot">
+<div class="info">
+<h2>Crash Bandicoot N. Sane Trilogy</h2>
+<p>Platformu piedzīvojumu spēle.</p>
+<a class="download" href="[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent">📥 Lejupielādēt</a>
+</div>
 </div>
 
+</div>
 
 <script>
-function searchGames() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let games = document.getElementsByClassName("game");
+function searchGames(){
+    let input=document.getElementById("search").value.toLowerCase();
+    let games=document.getElementsByClassName("game");
 
-    for (let i = 0; i < games.length; i++) {
-        let title = games[i].innerText.toLowerCase();
+    for(let i=0;i<games.length;i++){
+        let title=games[i].innerText.toLowerCase();
 
-        if (title.includes(input)) {
-            games[i].style.display = "";
-        } else {
-            games[i].style.display = "none";
+        if(title.includes(input)){
+            games[i].style.display="block";
+        }else{
+            games[i].style.display="none";
         }
     }
 }
