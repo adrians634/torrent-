@@ -1,174 +1,89 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>torrent vault </title>
-    <style>
-        body {
-            background: #121212;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torrent Vault</title>
 
-        header {
-            background: #1f1f1f;
-            padding: 25px;
-        }
+<style>
+body {
+    background:#121212;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+}
 
-        .game {
-            width: 320px;
-            margin: 30px auto;
-            background: #222;
-            border-radius: 10px;
-            padding: 20px;
-        }
+header{
+    background:#1f1f1f;
+    padding:30px;
+}
 
-        .download {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+#search{
+    width:300px;
+    padding:12px;
+    margin:20px;
+    border-radius:8px;
+    border:none;
+}
 
-        .download:hover {
-            background: #218838;
-        }
-    </style>
+.game{
+    width:320px;
+    margin:30px auto;
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+}
+
+.download{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+</style>
+
 </head>
 <body>
 
 <header>
-    <h1>🎮 torrent vault </h1>
-    <p>Šeit jūs varat ielādēt spēļu torentus par brīvo.</p>
-</header>   
+<h1>🎮 Torrent Vault</h1>
+<p>Meklē spēles.</p>
+</header>
+
+<input type="text" id="search" placeholder="🔎 Meklēt..." onkeyup="searchGames()">
+
+<div class="game">
+<h2>Mana spēle</h2>
+<p>Apraksts.</p>
+
+<a class="download" href="mana_spele.torrent" download>
+📥 Lejupielādēt
+</a>
 </div>
 
-</body>
-</html>
-<h2>Mana spēle</h2>
-<a class="download" href="[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent" download>
-    📥 Lejupielādēt torrentu
-</a>
-Tavs-projekts
-│
-├── index.html
-└── [FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent
-<input type="text" id="search" placeholder="🔎 Meklēt spēli..." onkeyup="searchGames()">
-#search {
-    width: 300px;
-    padding: 12px;
-    margin: 20px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-}
-<style>
-    body {
-        background: #121212;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 0;
-    }
-    <script>
+<script>
 function searchGames() {
     let input = document.getElementById("search").value.toLowerCase();
     let games = document.getElementsByClassName("game");
 
     for (let i = 0; i < games.length; i++) {
         let title = games[i].innerText.toLowerCase();
-
-        if (title.includes(input)) {
-            games[i].style.display = "";
-        } else {
-            games[i].style.display = "none";
-        }
+        games[i].style.display = title.includes(input) ? "" : "none";
     }
 }
 </script>
-<style>
-#search {
-    width: 300px;
-    padding: 12px;
-}
-</style
-<script>
-function searchGames() {
-...
-}
-</script>
-<title>torrent vault </title>
-<style>
-body {
-    background: linear-gradient(135deg, #0f0f0f, #1b1b2f);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-}
 
-header {
-    background: rgba(0,0,0,0.5);
-    padding: 40px;
-    box-shadow: 0 0 20px #00ff88;
-}
-
-header h1 {
-    font-size: 45px;
-    color: #00ff88;
-    text-shadow: 0 0 15px #00ff88;
-}
-
-#search {
-    width: 320px;
-    padding: 15px;
-    margin: 25px;
-    border-radius: 30px;
-    border: 2px solid #00ff88;
-    background: #111;
-    color: white;
-    font-size: 16px;
-}
-
-.game {
-    width: 330px;
-    margin: 30px auto;
-    background: #222;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 0 20px black;
-    transition: 0.3s;
-}
-
-.game:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #00ff88;
-}
-
-.game h2 {
-    color: #00ff88;
-}
-
-.download {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 30px;
-    background: #00ff88;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.download:hover {
-    background: white;
-    transform: scale(1.1);
-}
-</style>
+</body>
+</html>
+<a class="download" href="[FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent" download>
+    📥 Lejupielādēt torrentu
+</a>
+Mana-majaslapa
+│
+├── index.html
+└── Torrenti
+    └── [FANO]Crash.Bandicoot.N.Sane.Trilogy-CODEX.torrent
